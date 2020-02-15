@@ -1,0 +1,69 @@
+backend:
+  name: git-gateway
+  repo: rebelastronaut/trinity
+  branch: master
+
+
+media_folder_relative: true
+media_folder: src/pages/images
+public_folder: src/pages/images
+
+collections:
+  - name: "Events"
+    label: "events"
+    identifier_field: title
+    folder: "src/pages/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime"}
+      - { label: "Cover Image", name: "cover", widget: "image"}
+      - { label: Gallery Images, name: "gallery", widget: list, fields: [{ label: Image, name: image, widget: image }]}
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "Groups"
+    label: "groups"
+    identifier_field: title
+    folder: "src/pages/groups"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime"}
+      - { label: "Cover Image", name: "cover", widget: "image"}
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "Static Pages"
+    label: "static_pages"
+    identifier_field: title
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+     preview: true
+    files:
+      - file: "src/pages/about/about.md"
+        label: "About"
+        name: "about"
+        fields:
+        - { label: "Cover Image", name: "cover", widget: "image" }
+        - { label: "Title", name: "title", widget: "string"}
+        - { label: "Publish Date", name: "date", widget: "datetime"}
+        - { label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/static_pages/donate.md"
+        label: "Donate"
+        name: "donate"
+        fields:
+        - { label: "Cover Image", name: "cover", widget: "image" }
+        - { label: "Title", name: "title", widget: "string"}
+        - { label: "Publish Date", name: "date", widget: "datetime"}
+        - { label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/static_pages/volunteer.md"
+        label: "Volunteer"
+        name: "Volunteer"
+        fields:
+        - { label: "Cover Image", name: "cover", widget: "image" }
+        - { label: "Title", name: "title", widget: "string"}
+        - { label: "Publish Date", name: "date", widget: "datetime"}
+        - { label: "Body", name: "body", widget: "markdown"}

@@ -3,8 +3,8 @@ backend:
   repo: rebelastronaut/trinity
   branch: master
   
-  media_folder: src/pages/images
-  public_folder: src/pages/images
+media_folder: src/pages/images
+public_folder: src/pages/images
 
 collections:
   - name: "Events"

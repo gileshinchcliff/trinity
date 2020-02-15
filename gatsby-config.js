@@ -112,16 +112,15 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-source-google-calendar-events`,
-      options: {
-        includedFields: ['start', 'end', 'summary', 'status', 'organizer', 'description', 'location', 'attachments', 'colourId'],
-        pemFilePath: "/home/work/rebelastronaut/pemfile.json",
-        calendarId: 'rebelastronaut.co.uk_kag7phpadv29hp0k3hdpmu0fs4@group.calendar.google.com',
-        assumedUser: "giles@rebelastronaut.co.uk"
-
-      }
-    },
+    // {
+    //   resolve: `gatsby-source-google-calendar-events`,
+    //   options: {
+    //     includedFields: ['start', 'end', 'summary', 'status', 'organizer', 'description', 'location', 'attachments', 'colourId'],
+    //     pemFilePath: "/home/work/rebelastronaut/pemfile.json",
+    //     calendarId: 'rebelastronaut.co.uk_kag7phpadv29hp0k3hdpmu0fs4@group.calendar.google.com',
+    //     assumedUser: "giles@rebelastronaut.co.uk"
+    //   }
+    // },
     // {
     //   resolve: `gatsby-plugin-remote-images`,
     //   options: {

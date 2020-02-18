@@ -1,8 +1,8 @@
 backend:
   name: git-gateway
   repo: rebelastronaut/trinity
-  branch: master
-  
+
+local_backend: true
 media_folder: src/pages/images
 public_folder: src/pages/images
 

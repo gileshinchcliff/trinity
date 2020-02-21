@@ -112,15 +112,15 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-source-google-calendar-events`,
-      options: {
-        includedFields: ['start', 'end', 'summary', 'status', 'organizer', 'description', 'location', 'attachments', 'colourId'],
-        pemFilePath: "/home/work/rebelastronaut/pemfile.json",
-        calendarId: 'rebelastronaut.co.uk_kag7phpadv29hp0k3hdpmu0fs4@group.calendar.google.com',
-        assumedUser: "giles@rebelastronaut.co.uk"
-      }
-    },
+    // {
+    //   resolve: `gatsby-source-google-calendar-events`,
+    //   options: {
+    //     includedFields: ['start', 'end', 'summary', 'status', 'organizer', 'description', 'location', 'attachments', 'colourId'],
+    //     pemFilePath: "/home/work/rebelastronaut/pemfile.json",
+    //     calendarId: 'rebelastronaut.co.uk_kag7phpadv29hp0k3hdpmu0fs4@group.calendar.google.com',
+    //     assumedUser: "giles@rebelastronaut.co.uk"
+    //   }
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -141,15 +141,15 @@ module.exports = {
         }
       }
     },
+    'gatsby-plugin-netlify-identity-widget',
+    `gatsby-plugin-netlify-cms-paths`,
+    `gatsby-plugin-offline`,
+    'gatsby-plugin-netlify',
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
       }
     },
-    'gatsby-plugin-netlify-identity-widget',
-    `gatsby-plugin-netlify-cms-paths`,
-    `gatsby-plugin-offline`,
-    'gatsby-plugin-netlify',
   ],
 }

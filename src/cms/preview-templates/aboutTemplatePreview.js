@@ -3,13 +3,12 @@ import React from 'react';
 import { AboutPageComponent } from '../../components/aboutTemplate';
 import { Layout } from '../../components/layout';
 
-const AboutPagePreview = ({ ...props }) => (
+const AboutPagePreview = ({ entry, widgetFor }) => (
     <Layout>
-        {console.log(props)}
         <AboutPageComponent
-            title={props.entry.getIn(['data', 'title'])}
-            body={ props.widgetFor('body') }
-            cover={props.widgetFor('image')}
+            title={entry.getIn(['data', 'title'], null)}
+            body={ widgetFor('body', null) }
+            cover={entry.getIn(['data', 'cover'], null)}
         />
     </Layout>
 )

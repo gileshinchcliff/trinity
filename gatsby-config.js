@@ -112,22 +112,15 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-source-google-calendar-events`,
-    //   options: {
-    //     includedFields: ['start', 'end', 'summary', 'status', 'organizer', 'description', 'location', 'attachments', 'colourId'],
-    //     pemFilePath: "/home/work/rebelastronaut/pemfile.json",
-    //     calendarId: 'rebelastronaut.co.uk_kag7phpadv29hp0k3hdpmu0fs4@group.calendar.google.com',
-    //     assumedUser: "giles@rebelastronaut.co.uk"
-    //   }
-    // },
-    // {
-    //   resolve: `gatsby-plugin-remote-images`,
-    //   options: {
-    //     nodeType: 'googleCalendarEvent',
-    //     imagePath: 'nodes[].attachments[].fileUrl',
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-google-calendar-events`,
+      options: {
+        includedFields: ['start', 'end', 'summary', 'status', 'organizer', 'description', 'location', 'attachments', 'colourId'],
+        pemFilePath: "/home/work/rebelastronaut/pemfile.json",
+        calendarId: 'rebelastronaut.co.uk_kag7phpadv29hp0k3hdpmu0fs4@group.calendar.google.com',
+        assumedUser: "giles@rebelastronaut.co.uk"
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -148,11 +141,14 @@ module.exports = {
         }
       }
     },
-    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      }
+    },
     'gatsby-plugin-netlify-identity-widget',
     `gatsby-plugin-netlify-cms-paths`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
     'gatsby-plugin-netlify',
   ],
